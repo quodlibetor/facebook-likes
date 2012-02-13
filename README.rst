@@ -7,6 +7,22 @@ A stupid js script to find the most popular thing you, or any other popular pers
 Usage
 =====
 
-Copy/paste the contents of src/getlikes.js into Firefox's "scratchpad" (shift+F4) and run it.
+``cd`` into this dir, run ``./bdist.sh`` visit index.html, and drag the bookmarklet to your bookmark bar.
 
-Yeah, it's not the most user friendly thing I've ever written, but it works, kinda.
+I know that bookmarklets are, like, *so* 2009, but still, yo.
+That's all I got.
+
+TODO
+====
+
+- maybe make it possible to see the top *n* most-liked things?
+- turn this into a Firefox/Chromium extension, so that people will actually know how to install it?
+- make it less ugly?
+
+Known Bugs
+==========
+
+It breaks Facebook until you re-load the page. I'm assuming that it's got something to do with the jQuery load. Calling jQuery.noconflict() doesn't seem to fix it.
+
+Also: I think there's a memory leak? Running it multiple times makes Firefox's memory balloon.
+But it could just be that I'm loading the full wall into one tab, including literally hundreds of fairly large images.

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Like things</title>
+  <style>
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    a {
+        padding: 5px;
+        border-radius: 6px;
+        background-color: #006DCC;
+        background-image: -moz-linear-gradient(center top , #0088CC, #0044CC);
+        background-repeat: repeat-x;
+        border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        color: #FFFFFF;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+        border-style: solid;
+        border-width: 1px;
+        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+        text-decoration: none;
+        line-height: 2.2em;
+    }
+    p, ul {
+        width: 600px;
+        margin: 15px auto;
+    }
+    li {
+        margin-bottom: 7px;
+        line-height: 1.5em;
+    }
+    p.warning {
+        border-radius: 5px;
+        background-color: #ff6347;
+        border: 1px solid #f08080;
+        padding: 4px;
+    }
+  </style>
+</head>
+
+<body>
+  <p>
+    Drag this link to your bookmark bar: <a href="%(bookmarklet)s">Facebook Like Counter</a>
+  </p>
+  <p>
+    Then, visit someone's Facebook Wall and click it.
+  </p>
+  <p>
+    After a short delay, you will notice some counters off in the top-right corner.
+    <ul>
+      <li>The "Times Loaded" number represents how many times the script has clicked the "Older Posts" button.</li>
+      <li>The "Likes Found" number represents how many wall posts have <em>at least</em> 3 (maybe 4?) likes.</li>
+      <li>The "Most Liked" number represents your wall post with the <em>most</em> likes. Additionally, <strong>it's clickable</strong> and will take you to the post with the most likes.</li>
+    </ul>
+  </p>
+  <p class="warning">
+    WARNING: this thing seems to kinda break Facebook until you re-load the page.
+    So after you've figured out what's hot and what's not, hit the refresh button or press F5.
+  </p>
+</body>
