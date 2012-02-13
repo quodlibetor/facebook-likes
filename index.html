@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Like things</title>
+  <style>
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    a {
+        padding: 5px;
+        border-radius: 6px;
+        background-color: #006DCC;
+        background-image: -moz-linear-gradient(center top , #0088CC, #0044CC);
+        background-repeat: repeat-x;
+        border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        color: #FFFFFF;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+        border-style: solid;
+        border-width: 1px;
+        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+        text-decoration: none;
+        line-height: 2.2em;
+    }
+    p, ul {
+        width: 600px;
+        margin: 15px auto;
+    }
+    li {
+        margin-bottom: 7px;
+        line-height: 1.5em;
+    }
+    p.warning {
+        border-radius: 5px;
+        background-color: #ff6347;
+        border: 1px solid #f08080;
+        padding: 4px;
+    }
+  </style>
+</head>
+
+<body>
+  <p>
+    Drag this link to your bookmark bar: <a href="javascript:(function(){var%20a=2e3;if(window.jQuery===undefined){var%20b=document.createElement(%22script%22);b.setAttribute(%22type%22,%22text/javascript%22),b.setAttribute(%22src%22,%22http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js%22),document.getElementsByTagName(%22head%22)[0].appendChild(b)}var%20c=function(){var%20a=[],b=0,c;jQuery(%22li.uiUfiLike%22).each(function(d,e){var%20f=jQuery(e),g=parseInt(jQuery(%27a[rel=%22dialog%22]%27,e).text());isNaN(g)||(a.push(g),g>b&&(b=g,c=f.closest(%22form%22).find(%22abbr%22).closest(%22a%22).attr(%22href%22)))});return{target:c,most:b,total:a.length}},d=function(b,f){if(jQuery(%22a.uiMorePagerPrimary%22).length>0){jQuery(%22a.uiMorePagerPrimary%22).click();var%20g=c();e(f,g.total,g.most,g.target),setTimeout(function(){d(5,f+1)},a)}else%20b>0?setTimeout(function(){d(b-1,f)},a):c()},e=function(a,b,c,d){var%20e=%27<div%20id=%22bwmTheBox%22%20style=%22position:%20fixed;%20top:%200;%20right:%200;%20width:%20120px;%20height:%2060px;%20background-color:%20#6a5acd;%20color:%20#000;%20z-index:%20100000;%20-moz-box-shadow:%20-3px%203px%205px%20#888;%20-webkit-box-shadow:%20-3px%203px%205px%20#888;%20box-shadow:%20-3px%203px%205px%20#888;%22><table%20style=%22width:%20110px;%20margin:%20auto;%22><tr><td>Times%20Loaded:</td><td%20id=%22bwmTimesLoaded%22></td></tr><tr><td>Likes%20Found:</td><td%20id=%22bwmLikesFound%22></td></tr><tr><td>Most%20Liked:</td><td%20id=%22bwmMostLiked%22><a%20style=%22background-color:%20#7b68ee;%20color:%20#fff;%20padding:0%203px;%20border-radius:%203px;%22%20target=%22_blank%22></a></td></tr></table></div>%27;jQuery(%22#bwmTheBox%22).length===0&&jQuery(%22body%22).append(e),jQuery(%22#bwmTimesLoaded%22).text(a),jQuery(%22#bwmLikesFound%22).text(b),jQuery(%22#bwmMostLiked%20a%22).text(c).prop(%22href%22,d)};setTimeout(function(){jQuery.noConflict(),e(0,0,0),d(5,0)},1e3)})()">Facebook Like Counter</a>
+  </p>
+  <p>
+    Then, visit someone's Facebook Wall and click it.
+  </p>
+  <p>
+    After a short delay, you will notice some counters off in the top-right corner.
+    <ul>
+      <li>The "Times Loaded" number represents how many times the script has clicked the "Older Posts" button.</li>
+      <li>The "Likes Found" number represents how many wall posts have <em>at least</em> 3 (maybe 4?) likes.</li>
+      <li>The "Most Liked" number represents your wall post with the <em>most</em> likes. Additionally, <strong>it's clickable</strong> and will take you to the post with the most likes.</li>
+    </ul>
+  </p>
+  <p class="warning">
+    WARNING: this thing seems to kinda break Facebook until you re-load the page.
+    So after you've figured out what's hot and what's not, hit the refresh button or press F5.
+  </p>
+</body>
