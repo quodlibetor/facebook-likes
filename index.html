@@ -77,13 +77,47 @@
 	    border-radius: 10px;
 	    padding: .2em;
 	}
+        /* github ribbon via css taken from http://unindented.org/articles/2009/10/github-ribbon-using-css-transforms/ */
+        .ribbon {
+            background-color: #a00;
+            overflow: hidden;
+            /* top left corner */
+            position: absolute;
+            left: -3em;
+            top: 2.5em;
+            /* 45 deg ccw rotation */
+            -moz-transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            /* shadow */
+            -moz-box-shadow: 0 0 1em #888;
+            -webkit-box-shadow: 0 0 1em #888;
+            -o-box-shadow: 0 0 1em #888;
+            box-shadow: 0 0 1em #888;
+        }
+        .ribbon a {
+            border: 1px solid #faa;
+            color: #fff;
+            display: block;
+            font: bold 81.25% 'Helvetiva Neue', Helvetica, Arial, sans-serif;
+            margin: 0.05em 0 0.075em 0;
+            padding: 0.5em 3.5em;
+            text-align: center;
+            text-decoration: none;
+            /* shadow */
+            text-shadow: 0 0 0.5em #444;
+        }
   </style>
 </head>
 
 <body>
+  <div class="ribbon">
+    <a href="http://github.com/quodlibetor" rel="me" title="This is a great way to become friends.">Fork Me on GitHub!</a>
+  </div>
   <h2>The Facebook Like Counter tells you what your most-liked status of all time is<a href="#note">*</a></h2>
   <p>
-	Do you care?
+    Do you care?
     Drag this button to your bookmark bar:</p>
   <p class="center"><a class="button" href="javascript:(function(){var%20a=2e3;if(window.jQuery===undefined){var%20b=document.createElement(%22script%22);b.setAttribute(%22type%22,%22text/javascript%22),b.setAttribute(%22src%22,%22http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js%22),document.getElementsByTagName(%22head%22)[0].appendChild(b)}var%20c=function(){var%20a=[],b=0,c;jQuery(%22li.uiUfiLike%22).each(function(d,e){var%20f=jQuery(e),g=parseInt(jQuery(%27a[rel=%22dialog%22]%27,e).text());isNaN(g)||(a.push(g),g>b&&(b=g,c=f.closest(%22form%22).find(%22abbr%22).closest(%22a%22).attr(%22href%22)))});return{target:c,most:b,total:a.length}},d=function(b,f){if(jQuery(%22a.uiMorePagerPrimary%22).length>0){jQuery(%22a.uiMorePagerPrimary%22).click();var%20g=c();e(f,g.total,g.most,g.target),setTimeout(function(){d(5,f+1)},a)}else%20b>0?setTimeout(function(){d(b-1,f)},a):c()},e=function(a,b,c,d){var%20e=%27<div%20id=%22bwmTheBox%22%20style=%22position:%20fixed;%20top:%200;%20right:%200;%20width:%20120px;%20height:%2060px;%20background-color:%20#6a5acd;%20color:%20#000;%20z-index:%20100000;%20-moz-box-shadow:%20-3px%203px%205px%20#888;%20-webkit-box-shadow:%20-3px%203px%205px%20#888;%20box-shadow:%20-3px%203px%205px%20#888;%22><table%20style=%22width:%20110px;%20margin:%20auto;%22><tr><td>Times%20Loaded:</td><td%20id=%22bwmTimesLoaded%22></td></tr><tr><td>Likes%20Found:</td><td%20id=%22bwmLikesFound%22></td></tr><tr><td>Most%20Liked:</td><td%20id=%22bwmMostLiked%22><a%20style=%22background-color:%20#7b68ee;%20color:%20#fff;%20padding:0%203px;%20border-radius:%203px;%22%20target=%22_blank%22></a></td></tr></table></div>%27;jQuery(%22#bwmTheBox%22).length===0&&jQuery(%22body%22).append(e),jQuery(%22#bwmTimesLoaded%22).text(a),jQuery(%22#bwmLikesFound%22).text(b),jQuery(%22#bwmMostLiked%20a%22).text(c).prop(%22href%22,d)};setTimeout(function(){jQuery.noConflict(),e(0,0,0),d(5,0)},1e3)})()">Facebook&nbsp;Like&nbsp;Counter</a>
   </p>
@@ -106,9 +140,14 @@
       <li>The "Likes Found" number represents how many wall posts have <em>at least</em> 3 (maybe 4? I know&mdash;it's kinda buggy) likes.</li>
     </ul>
   </p>
+
+  <p>The code is BSD licensed, and patches welcome. Seriously, <code><a href="http://github.com/quodlibetor/facebook-likes">fork me</a></code>.</p>
+
   <aside>
 	<p id="note">* This will technically work on <em>any wall page</em> you use it on.</p>
   </aside>
+
+  <!-- Sorry... I'm vain and a little curious if anyone cares. -->
   <script type="text/javascript">
         var _gaq = _gaq || [];
           _gaq.push(['_setAccount', 'UA-30088350-1']);
