@@ -7,7 +7,14 @@ A stupid js script to find the most popular thing you, or any other popular pers
 Usage
 =====
 
-``cd`` into this dir, run ``./bdist.sh`` visit index.html, and drag the bookmarklet to your bookmark bar.
+See `the homepage`_ for detailed instructions.
+
+.. _the homepage: http://quodlibetor.github.com/facebook-likes
+
+To Build
+--------
+
+``cd`` into this dir, run ``./bdist.sh``, visit ``index.html``, and drag the bookmarklet to your bookmark bar.
 
 I know that bookmarklets are, like, *so* 2009, but still, yo.
 That's all I got.

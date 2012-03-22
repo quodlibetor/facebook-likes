@@ -8,7 +8,7 @@
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
     }
-    a {
+    a.button {
         padding: 5px;
         border-radius: 6px;
         background-color: #006DCC;
@@ -23,10 +23,22 @@
         text-decoration: none;
         line-height: 2.2em;
     }
-    p, ul {
+    p, ul, aside, h2 {
         width: 600px;
         margin: 15px auto;
     }
+	p.center {
+	    text-align: center;
+	}
+	h2 {
+	    text-align: center;
+	}
+	aside {
+	    border-left: solid 1px #cecece;
+	    padding-left: 2em;
+	    font-size: .7em;
+	    color: #2c2c2c;
+	}
     li {
         margin-bottom: 7px;
         line-height: 1.5em;
@@ -37,26 +49,114 @@
         border: 1px solid #f08080;
         padding: 4px;
     }
+	.callout {
+	    background-color: #63ff67;
+	    border: 1px solid #50ff57;
+	    border-radius: 3px;
+	    padding: 1px;
+	}
+	.purple {
+	    background-color: #6a5acd;
+	    color: white;
+	    padding: 2px;
+	}
+	p:target {
+	    -moz-transition-property: background-color;
+	    -webkit-transition-property: background-color;
+	    -o-transition-property: background-color;
+	    transition-property: background-color;
+	    -moz-transition-duration: 3s;
+	    -webkit-transition-duration: 3s;
+	    -o-transition-duration: 3s;
+	    transition-duration: 3s;
+	    background-color: yellow;
+	}
+	p#note {
+	    position: fixed;
+	    bottom: 0;
+	    border-radius: 10px;
+	    padding: .2em;
+	}
+        /* github ribbon via css taken from http://unindented.org/articles/2009/10/github-ribbon-using-css-transforms/ */
+        .ribbon {
+            background-color: #a00;
+            overflow: hidden;
+            /* top left corner */
+            position: absolute;
+            left: -3em;
+            top: 2.5em;
+            /* 45 deg ccw rotation */
+            -moz-transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            /* shadow */
+            -moz-box-shadow: 0 0 1em #888;
+            -webkit-box-shadow: 0 0 1em #888;
+            -o-box-shadow: 0 0 1em #888;
+            box-shadow: 0 0 1em #888;
+        }
+        .ribbon a {
+            border: 1px solid #faa;
+            color: #fff;
+            display: block;
+            font: bold 81.25%% 'Helvetiva Neue', Helvetica, Arial, sans-serif;
+            margin: 0.05em 0 0.075em 0;
+            padding: 0.5em 3.5em;
+            text-align: center;
+            text-decoration: none;
+            /* shadow */
+            text-shadow: 0 0 0.5em #444;
+        }
   </style>
 </head>
 
 <body>
+  <div class="ribbon">
+    <a href="http://github.com/quodlibetor" rel="me" title="This is a great way to become friends.">Fork Me on GitHub!</a>
+  </div>
+  <h2>The Facebook Like Counter tells you what your most-liked status of all time is<a href="#note">*</a></h2>
   <p>
-    Drag this link to your bookmark bar: <a href="%(bookmarklet)s">Facebook Like Counter</a>
+    Do you care?
+    Drag this button to your bookmark bar:</p>
+  <p class="center"><a class="button" href="%(bookmarklet)s">Facebook&nbsp;Like&nbsp;Counter</a>
   </p>
+  <aside>
+    <p>Don't know how to add a bookmarklet?</p>
+    <p>Video instructions for <a href="http://youtu.be/3YxX8E4iAlI" title="You show good taste and act with distinction in all you do.">Firefox</a>, <a href="http://youtu.be/gRwy0mOAJ7U" title="You obviously like shiny things.">Chrome</a>, <a href="http://youtu.be/We3jKKnt70E" title="I bet you like John Zorn.">Opera</a>, <a href="http://youtu.be/H0OFxMwdB-4" title="Okay, that's expressed a bit more strongly than I would like to. But seriously, IE?">IE</a>.</p>
+  </aside>
   <p>
-    Then, visit someone's Facebook Wall and click it.
-  </p>
-  <p>
-    After a short delay, you will notice some counters off in the top-right corner.
-    <ul>
-      <li>The "Times Loaded" number represents how many times the script has clicked the "Older Posts" button.</li>
-      <li>The "Likes Found" number represents how many wall posts have <em>at least</em> 3 (maybe 4?) likes.</li>
-      <li>The "Most Liked" number represents your wall post with the <em>most</em> likes. Additionally, <strong>it's clickable</strong> and will take you to the post with the most likes.</li>
-    </ul>
+    Then, visit your Facebook Wall, click the button you just added to your browser, and watch the top-right corner of your screen for a <span class="purple">purple</span> box.
   </p>
   <p class="warning">
     WARNING: this thing seems to kinda break Facebook until you re-load the page.
     So after you've figured out what's hot and what's not, hit the refresh button or press F5.
   </p>
+  <p>
+    After a short delay, you will notice some counters off in the top-right corner.
+    <ul>
+      <li>The "<span class="callout">Most Liked</span>" number represents your wall post with the <em>most</em> likes. Additionally, it <span class="callout">is clickable</span> and will take you to the post with the most likes.</li>
+      <li>The "Times Loaded" number represents how many times the script has clicked the "Older Posts" button.</li>
+      <li>The "Likes Found" number represents how many wall posts have <em>at least</em> 3 (maybe 4? I know&mdash;it's kinda buggy) likes.</li>
+    </ul>
+  </p>
+
+  <p>The code is BSD licensed, and patches welcome. Seriously, <code><a href="http://github.com/quodlibetor/facebook-likes">fork me</a></code>.</p>
+
+  <aside>
+	<p id="note">* This will technically work on <em>any wall page</em> you use it on.</p>
+  </aside>
+
+  <!-- Sorry... I'm vain and a little curious if anyone cares. -->
+  <script type="text/javascript">
+        var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-30088350-1']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+              var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+              var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+  </script>
 </body>
