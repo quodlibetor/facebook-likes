@@ -8,7 +8,7 @@
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
     }
-    a {
+    a.button {
         padding: 5px;
         border-radius: 6px;
         background-color: #006DCC;
@@ -23,10 +23,22 @@
         text-decoration: none;
         line-height: 2.2em;
     }
-    p, ul {
+    p, ul, aside, h2 {
         width: 600px;
         margin: 15px auto;
     }
+	p.center {
+	    text-align: center;
+	}
+	h2 {
+	    text-align: center;
+	}
+	aside {
+	    border-left: solid 1px #cecece;
+	    padding-left: 2em;
+	    font-size: .7em;
+	    color: #2c2c2c;
+	}
     li {
         margin-bottom: 7px;
         line-height: 1.5em;
@@ -37,30 +49,67 @@
         border: 1px solid #f08080;
         padding: 4px;
     }
+	.callout {
+	    background-color: #63ff67;
+	    border: 1px solid #50ff57;
+	    border-radius: 3px;
+	    padding: 1px;
+	}
+	.purple {
+	    background-color: #6a5acd;
+	    color: white;
+	    padding: 2px;
+	}
+	p:target {
+	    -moz-transition-property: background-color;
+	    -webkit-transition-property: background-color;
+	    -o-transition-property: background-color;
+	    transition-property: background-color;
+	    -moz-transition-duration: 3s;
+	    -webkit-transition-duration: 3s;
+	    -o-transition-duration: 3s;
+	    transition-duration: 3s;
+	    background-color: yellow;
+	}
+	p#note {
+	    position: fixed;
+	    bottom: 0;
+	    border-radius: 10px;
+	    padding: .2em;
+	}
   </style>
 </head>
 
 <body>
+  <h2>The Facebook Like Counter tells you what your most-liked status of all time is<a href="#note">*</a></h2>
   <p>
-    Drag this link to your bookmark bar: <a href="javascript:(function(){var%20a=2e3;if(window.jQuery===undefined){var%20b=document.createElement(%22script%22);b.setAttribute(%22type%22,%22text/javascript%22),b.setAttribute(%22src%22,%22http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js%22),document.getElementsByTagName(%22head%22)[0].appendChild(b)}var%20c=function(){var%20a=[],b=0,c;jQuery(%22li.uiUfiLike%22).each(function(d,e){var%20f=jQuery(e),g=parseInt(jQuery(%27a[rel=%22dialog%22]%27,e).text());isNaN(g)||(a.push(g),g>b&&(b=g,c=f.closest(%22form%22).find(%22abbr%22).closest(%22a%22).attr(%22href%22)))});return{target:c,most:b,total:a.length}},d=function(b,f){if(jQuery(%22a.uiMorePagerPrimary%22).length>0){jQuery(%22a.uiMorePagerPrimary%22).click();var%20g=c();e(f,g.total,g.most,g.target),setTimeout(function(){d(5,f+1)},a)}else%20b>0?setTimeout(function(){d(b-1,f)},a):c()},e=function(a,b,c,d){var%20e=%27<div%20id=%22bwmTheBox%22%20style=%22position:%20fixed;%20top:%200;%20right:%200;%20width:%20120px;%20height:%2060px;%20background-color:%20#6a5acd;%20color:%20#000;%20z-index:%20100000;%20-moz-box-shadow:%20-3px%203px%205px%20#888;%20-webkit-box-shadow:%20-3px%203px%205px%20#888;%20box-shadow:%20-3px%203px%205px%20#888;%22><table%20style=%22width:%20110px;%20margin:%20auto;%22><tr><td>Times%20Loaded:</td><td%20id=%22bwmTimesLoaded%22></td></tr><tr><td>Likes%20Found:</td><td%20id=%22bwmLikesFound%22></td></tr><tr><td>Most%20Liked:</td><td%20id=%22bwmMostLiked%22><a%20style=%22background-color:%20#7b68ee;%20color:%20#fff;%20padding:0%203px;%20border-radius:%203px;%22%20target=%22_blank%22></a></td></tr></table></div>%27;jQuery(%22#bwmTheBox%22).length===0&&jQuery(%22body%22).append(e),jQuery(%22#bwmTimesLoaded%22).text(a),jQuery(%22#bwmLikesFound%22).text(b),jQuery(%22#bwmMostLiked%20a%22).text(c).prop(%22href%22,d)};setTimeout(function(){jQuery.noConflict(),e(0,0,0),d(5,0)},1e3)})()">Facebook Like Counter</a>
+	Do you care?
+    Drag this button to your bookmark bar:</p>
+  <p class="center"><a class="button" href="javascript:(function(){var%20a=2e3;if(window.jQuery===undefined){var%20b=document.createElement(%22script%22);b.setAttribute(%22type%22,%22text/javascript%22),b.setAttribute(%22src%22,%22http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js%22),document.getElementsByTagName(%22head%22)[0].appendChild(b)}var%20c=function(){var%20a=[],b=0,c;jQuery(%22li.uiUfiLike%22).each(function(d,e){var%20f=jQuery(e),g=parseInt(jQuery(%27a[rel=%22dialog%22]%27,e).text());isNaN(g)||(a.push(g),g>b&&(b=g,c=f.closest(%22form%22).find(%22abbr%22).closest(%22a%22).attr(%22href%22)))});return{target:c,most:b,total:a.length}},d=function(b,f){if(jQuery(%22a.uiMorePagerPrimary%22).length>0){jQuery(%22a.uiMorePagerPrimary%22).click();var%20g=c();e(f,g.total,g.most,g.target),setTimeout(function(){d(5,f+1)},a)}else%20b>0?setTimeout(function(){d(b-1,f)},a):c()},e=function(a,b,c,d){var%20e=%27<div%20id=%22bwmTheBox%22%20style=%22position:%20fixed;%20top:%200;%20right:%200;%20width:%20120px;%20height:%2060px;%20background-color:%20#6a5acd;%20color:%20#000;%20z-index:%20100000;%20-moz-box-shadow:%20-3px%203px%205px%20#888;%20-webkit-box-shadow:%20-3px%203px%205px%20#888;%20box-shadow:%20-3px%203px%205px%20#888;%22><table%20style=%22width:%20110px;%20margin:%20auto;%22><tr><td>Times%20Loaded:</td><td%20id=%22bwmTimesLoaded%22></td></tr><tr><td>Likes%20Found:</td><td%20id=%22bwmLikesFound%22></td></tr><tr><td>Most%20Liked:</td><td%20id=%22bwmMostLiked%22><a%20style=%22background-color:%20#7b68ee;%20color:%20#fff;%20padding:0%203px;%20border-radius:%203px;%22%20target=%22_blank%22></a></td></tr></table></div>%27;jQuery(%22#bwmTheBox%22).length===0&&jQuery(%22body%22).append(e),jQuery(%22#bwmTimesLoaded%22).text(a),jQuery(%22#bwmLikesFound%22).text(b),jQuery(%22#bwmMostLiked%20a%22).text(c).prop(%22href%22,d)};setTimeout(function(){jQuery.noConflict(),e(0,0,0),d(5,0)},1e3)})()">Facebook&nbsp;Like&nbsp;Counter</a>
   </p>
+  <aside>
+    <p>Don't know how to add a bookmarklet?</p>
+    <p>Video instructions for <a href="http://youtu.be/3YxX8E4iAlI" title="You show good taste and act with distinction in all you do.">Firefox</a>, <a href="http://youtu.be/gRwy0mOAJ7U" title="You obviously like shiny things.">Chrome</a>, <a href="http://youtu.be/We3jKKnt70E" title="I bet you like John Zorn.">Opera</a>, <a href="http://youtu.be/H0OFxMwdB-4" title="Okay, that's expressed a bit more strongly than I would like to. But seriously, IE?">IE</a>.</p>
+  </aside>
   <p>
-    Then, visit someone's Facebook Wall and click it.
-  </p>
-  <p>
-    After a short delay, you will notice some counters off in the top-right corner.
-    <ul>
-      <li>The "Times Loaded" number represents how many times the script has clicked the "Older Posts" button.</li>
-      <li>The "Likes Found" number represents how many wall posts have <em>at least</em> 3 (maybe 4?) likes.</li>
-      <li>The "Most Liked" number represents your wall post with the <em>most</em> likes. Additionally, <strong>it's clickable</strong> and will take you to the post with the most likes.</li>
-    </ul>
+    Then, visit your Facebook Wall, click the button you just added to your browser, and watch the top-right corner of your screen for a <span class="purple">purple</span> box.
   </p>
   <p class="warning">
     WARNING: this thing seems to kinda break Facebook until you re-load the page.
     So after you've figured out what's hot and what's not, hit the refresh button or press F5.
   </p>
+  <p>
+    After a short delay, you will notice some counters off in the top-right corner.
+    <ul>
+      <li>The "<span class="callout">Most Liked</span>" number represents your wall post with the <em>most</em> likes. Additionally, it <span class="callout">is clickable</span> and will take you to the post with the most likes.</li>
+      <li>The "Times Loaded" number represents how many times the script has clicked the "Older Posts" button.</li>
+      <li>The "Likes Found" number represents how many wall posts have <em>at least</em> 3 (maybe 4? I know&mdash;it's kinda buggy) likes.</li>
+    </ul>
+  </p>
+  <aside>
+	<p id="note">* This will technically work on <em>any wall page</em> you use it on.</p>
+  </aside>
   <script type="text/javascript">
-
         var _gaq = _gaq || [];
           _gaq.push(['_setAccount', 'UA-30088350-1']);
           _gaq.push(['_trackPageview']);
@@ -70,6 +119,5 @@
                   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
               var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
             })();
-
   </script>
 </body>
