@@ -26,3 +26,8 @@ It breaks Facebook until you re-load the page. I'm assuming that it's got someth
 
 Also: I think there's a memory leak? Running it multiple times makes Firefox's memory balloon.
 But it could just be that I'm loading the full wall into one tab, including literally hundreds of fairly large images.
+
+License
+=======
+
+BSD. Share, modify, share again.

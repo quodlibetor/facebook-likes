@@ -1,3 +1,5 @@
+// BSD Licensed. Copyright Brandon W Maister <quodlibetor@gmail.com>
+// Share freely.
 (function(){
     // 1000 seems to break it on my connection
     var DELAY = 2000;
